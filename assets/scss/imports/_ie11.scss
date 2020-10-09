@@ -1,0 +1,38 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .site-header {
+    height: 100px;
+
+    @media (min-width: 1150px) {
+      height: 40px;
+    }
+  }
+  .page {
+    position: relative;
+    top: 110px;
+
+    @media (min-width: 1150px) {
+      top: 40px;
+    }
+  }
+  .nav-container-ie11 {
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+  }
+  .nuxt-link-ie11 {
+    display: block;
+    justify-content: center;
+    max-width: 220px;
+    text-align: center;
+
+    @media (min-width: 1150px) {
+      display: inline-block;
+    }
+  }
+  .ie11-logo {
+    width: 150px;
+    max-width: 150px;
+    height: 40.31px;
+    margin-left: 35px;
+  }
+}

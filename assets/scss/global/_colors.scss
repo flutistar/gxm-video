@@ -1,0 +1,60 @@
+// Global colors
+
+$red: rgba(224, 29, 22, 1); // Lust
+$darkred: rgb(122, 29, 22); //
+$lightred: rgb(250, 29, 22); //
+$darkblue: rgba(11, 79, 108, 1); // Dark Imperial Blue
+$darkgreen: rgba(16, 79, 85, 1); // Midnight Green (Eagle Green)
+$lightblue: rgba(1, 186, 239, 1); // Cyan (Process)
+$white: rgb(222, 208, 238); // Ghost White
+$light-gray: rgba(200,200,200,1);
+$black: rgba(0, 0, 0, 1);
+
+$poker-primary: #fff;
+$poker-accent: #9f26b5;
+$poker-secondary: #111820;
+$poker-header: #111820;
+$poker-background-color: #111820;
+
+$blaze-primary: #fff;
+$blaze-accent: #ffbd29;
+$blaze-secondary: #1a1a1a;
+$blaze-background-header: #161616;
+$blaze-background-color: #232323;
+
+
+// Colors to use:
+$accent-color: $poker-accent;
+$accent-hover: darken($accent-color, 25) !default;
+
+$button-text: $poker-primary;
+$button-hover-text: $poker-accent;
+$button-hover: $poker-primary;
+
+// PRIMARY COLOR
+$primary-color: $poker-primary !default;
+$primary-color_darker: darken($primary-color, 25) !default;
+$primary-color_lighter: lighten($primary-color, 25) !default;
+$primary-color_transparent: rgba($primary-color, 0.65) !default;
+
+// SECONDARY COLOR
+$secondary-color: $poker-secondary !default;
+$secondary-color_darker: darken($secondary-color, 25) !default;
+$secondary-color_lighter: lighten($secondary-color, 25) !default;
+$secondary-color_transparent: rgba($secondary-color, 0.65) !default;
+
+// HEADER
+$header-bg-color: $poker-header !default;
+$header-bg-darker: darken($header-bg-color, 3) !default;
+
+// BODY
+$body-bg-color: $poker-background-color !default;
+$body-color: $poker-primary !default;
+$body-color_darker: darken($body-color, 25) !default;
+$body-font-family: #{UniSans,Helvetica,Arial,sans-serif} !default;
+
+// A
+$a-color: $body-color !default;
+$a-color_hover: $body-color !default;
+$a-color_focus: $body-color !default;
+$a-color_visited: $body-color !default;

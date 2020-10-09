@@ -1,0 +1,58 @@
+/* stylelint-disable selector-max-type */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'UniSans', sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+h1 {
+  padding-top: 0;
+  padding-bottom: 10px;
+  margin-top: 0;
+  font-size: 45px;
+  text-transform: uppercase;
+}
+
+h2 {
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+body {
+  font-family: UniSans thin, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin-bottom: 20px;
+}

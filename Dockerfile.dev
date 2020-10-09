@@ -1,0 +1,14 @@
+FROM node:latest
+
+WORKDIR /usr/src/app/
+
+ENV API_ADDRESS='http://gxm-video-platform.herokuapp.com'
+ENV PROPERTY_ID=wolfjaw-studios
+ENV STRIPE_PUBLIC_API_KEY=pk_test_kbodKK6lY1o02ZI3w9rOw1Ln00JU0YUHjz
+ENV HOST=0.0.0.0
+ENV API_URL=http://localhost:8000
+
+# docker build . -f Dockerfile.dev -t poker
+# docker run --net poker-wordpress_default -v (pwd)/:/ poker
+
+CMD bash -c "npm install && npm run dev"

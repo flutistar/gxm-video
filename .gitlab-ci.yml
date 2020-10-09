@@ -1,0 +1,61 @@
+# Define stages to be used by all jobs in certain order
+# More information to be found here: https://docs.gitlab.com/ce/ci/yaml/README.html#stages
+stages:
+  - deploy
+
+# Define job to deploy your application to development environment
+# More information to be found here: https://docs.gitlab.com/ce/ci/yaml/README.html#jobs
+deploy_development:
+  stage: deploy
+  image: node:latest
+  script:
+    - git remote add heroku_develop https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_DEV.git
+    - git push -f heroku_develop HEAD:master
+  only:
+    - develop
+
+
+#############################################################################################
+# Staging
+
+# Define job to deploy your application to staging environment
+# More information to be found here: https://docs.gitlab.com/ce/ci/yaml/README.html#jobs
+deploy_pokergo_staging:
+  stage: deploy
+  image: node:latest
+  only:
+    - staging
+  script:
+    - git remote add heroku_pokergo_staging https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_POKERGO_STAGING.git
+    - git push -f heroku_pokergo_staging HEAD:master
+
+    #############################################################################################
+# Heroku QA
+
+# Define job to deploy your application to the QA environment
+# More information to be found here: https://docs.gitlab.com/ce/ci/yaml/README.html#jobs
+deploy_qa:
+  stage: deploy
+  image: node:latest
+  except:
+    - branches
+  only:
+    - /^QA-.+$/
+  script:
+    - git remote add heroku_qa https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_QA.git
+    - git push -f heroku_qa HEAD:master
+
+#############################################################################################
+# Production 
+
+# Define job to deploy your application to production environment
+# More information to be found here: https://docs.gitlab.com/ce/ci/yaml/README.html#jobs
+deploy_pokergo_production:
+  stage: deploy
+  image: node:latest
+  when: manual
+  only:
+    - master
+  script:
+    - git remote add heroku_pokergo_production https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME_POKERGO_PRODUCTION.git
+    - git push -f heroku_pokergo_production HEAD:master
